@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our Story Timeline</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* ── MOBILE: single column, icon on left, card on right ── */
+    @media (max-width: 767px) {
+      .tl-wrap::before {
+        content: '';
+        position: absolute;
+        left: 34px;
+        top: 30px;
+        bottom: 30px;
+        border-left: 2px dashed #d1d5db;
+        z-index: 0;
+      }
+      .tl-row {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: flex-start !important;
+        margin-top: 0 !important;
+        margin-bottom: 24px !important;
+      }
+      .tl-spacer {
+        display: none !important;
+      }
+      .tl-card-side {
+        display: flex !important;
+        justify-content: flex-start !important;
+        padding-left: 14px !important;
+        padding-right: 0 !important;
+        flex: 1 !important;
+      }
+      .tl-card {
+        max-width: 100% !important;
+        width: 100% !important;
+        padding: 16px 18px !important;
+      }
+      .tl-year {
+        font-size: 52px !important;
+      }
+      .tl-icon-col {
+        position: relative;
+        z-index: 1;
+        flex-shrink: 0;
+      }
+    }
+
+    /* ── DESKTOP: alternating left/right with overlap ── */
+    @media (min-width: 768px) {
+      .tl-line {
+        display: block !important;
+      }
+      .tl-row-right {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        width: 100%;
+        position: relative;
+      }
+      .tl-row-left {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: flex-start;
+        width: 100%;
+        position: relative;
+      }
+      .tl-card-right {
+        display: flex;
+        justify-content: flex-start;
+        padding-left: 24px;
+        flex: 1;
+      }
+      .tl-card-left {
+        display: flex;
+        justify-content: flex-end;
+        padding-right: 24px;
+        flex: 1;
+      }
+    }
+
+    /* gradient year text */
+    .tl-year {
+      font-size: 80px;
+      font-weight: 600;
+      line-height: 1;
+      margin-bottom: 10px;
+      background: linear-gradient(to bottom, #1A70B4, rgba(26,112,180,0));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+  </style>
+</head>
+<body class="bg-white">
+
+<section class="bg-white pt-16 pb-10 md:py-28">
+  <div class="max-w-6xl mx-auto px-6 text-center">
+
+    <h2 class="text-3xl md:text-5xl lg:text-5xl font-bold mb-3 title-font">Our Story</h2>
+    <p class="max-w-xl mx-auto text-[#7a7a7a] text-[18px] md:text-2xl font-medium mb-12 desc-font leading-snug">
+      A journey spanning three decades of innovation, growth, and unwavering commitment to excellence.
+    </p>
+
+    <!-- TIMELINE -->
+    <div class="tl-wrap relative">
+
+      <!-- Desktop center dashed line -->
+      <div class="tl-line hidden absolute left-1/2 -translate-x-1/2 w-px border-l-2 border-dashed border-gray-300 z-0"
+           style="top: 30px; bottom: 30px;"></div>
+
+      <!-- ══════════════════════════════
+           ROW 1 — 2015 (card on RIGHT)
+      ══════════════════════════════ -->
+      <div class="tl-row tl-row-right relative z-10 mb-0">
+        <!-- left spacer (desktop only) -->
+        <div class="tl-spacer hidden md:flex flex-1"></div>
+
+        <!-- icon -->
+        <div class="tl-icon-col flex-shrink-0 w-[80px] flex justify-center">
+          <div class="border-2 border-dashed border-[#9B9C9D] rounded-full p-1 inline-flex">
+            <div class="w-[60px] h-[60px] flex items-center justify-center bg-[#9B9C9D] rounded-full">
+              <svg width="30" height="35" viewBox="0 0 30 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18.7491 33.7519C18.7491 34.0835 18.6174 34.4014 18.383 34.6358C18.1486 34.8703 17.8307 35.0019 17.4991 35.0019H12.4991C12.1676 35.0019 11.8497 34.8703 11.6153 34.6358C11.3808 34.4014 11.2491 34.0835 11.2491 33.7519C11.2491 33.4204 11.3808 33.1025 11.6153 32.8681C11.8497 32.6336 12.1676 32.5019 12.4991 32.5019H17.4991C17.8307 32.5019 18.1486 32.6336 18.383 32.8681C18.6174 33.1025 18.7491 33.4204 18.7491 33.7519ZM14.9991 16.2519C15.37 16.2519 15.7325 16.142 16.0408 15.936C16.3492 15.7299 16.5895 15.4371 16.7314 15.0945C16.8733 14.7519 16.9105 14.3749 16.8381 14.0112C16.7658 13.6474 16.5872 13.3133 16.325 13.0511C16.0627 12.7889 15.7287 12.6103 15.3649 12.538C15.0012 12.4656 14.6242 12.5028 14.2816 12.6447C13.939 12.7866 13.6462 13.0269 13.4401 13.3353C13.2341 13.6436 13.1241 14.0061 13.1241 14.3769C13.1241 14.8742 13.3217 15.3511 13.6733 15.7028C14.0249 16.0544 14.5019 16.2519 14.9991 16.2519ZM29.9398 23.1004L28.0085 31.7926C27.9169 32.2053 27.7221 32.5881 27.4423 32.9051C27.1625 33.2221 26.8069 33.463 26.4087 33.6052C26.0105 33.7474 25.5828 33.7863 25.1655 33.7182C24.7482 33.6502 24.3549 33.4774 24.0226 33.216L19.7663 30.0019H10.2351L5.97571 33.216C5.64334 33.4774 5.25012 33.6502 4.83282 33.7182C4.41552 33.7863 3.98777 33.7474 3.58958 33.6052C3.1914 33.463 2.83578 33.2221 2.55599 32.9051C2.27621 32.5881 2.08139 32.2053 1.98977 31.7926L0.0585187 23.1004C-0.023401 22.7274 -0.0192621 22.3406 0.070622 21.9694C0.160506 21.5982 0.333773 21.2524 0.577269 20.9582L5.03977 15.6051C5.18955 13.6378 5.64119 11.7053 6.37883 9.87539C8.39446 4.82226 12.0038 1.65195 13.4679 0.523824C13.9061 0.184267 14.4448 0 14.9991 0C15.5535 0 16.0922 0.184267 16.5304 0.523824C17.9898 1.65195 21.6038 4.82226 23.6195 9.87539C24.3571 11.7053 24.8087 13.6378 24.9585 15.6051L29.421 20.9582C29.6645 21.2524 29.8378 21.5982 29.9277 21.9694C30.0175 22.3406 30.0217 22.7274 29.9398 23.1004ZM10.5351 27.5019H19.4632C22.7632 21.6363 23.3804 16.0207 21.2976 10.8019C19.4601 6.1957 16.0132 3.2832 14.9991 2.50195C13.982 3.2832 10.5351 6.1957 8.69758 10.8019C6.61789 16.0207 7.23508 21.6363 10.5351 27.5019ZM8.19133 28.416C6.50904 25.3587 5.48821 22.354 5.12883 19.4019L2.49914 22.5582L4.43039 31.2519L4.45852 31.2316L8.19133 28.416ZM27.4991 22.5582L24.8695 19.4019C24.5132 22.3478 23.4945 25.3525 21.8132 28.416L25.5398 31.2285L25.5679 31.2488L27.4991 22.5582Z" fill="white"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- card -->
+        <div class="tl-card-side tl-card-right">
+          <div class="tl-card bg-white shadow-sm border rounded-lg p-[30px] text-left max-w-[365px] w-full">
+            <div class="tl-year desc-font">2015</div>
+            <h4 class="font-bold text-2xl title-font mb-1">Modernization</h4>
+            <p class="text-gray-600 desc-font font-medium text-base">
+              Invested in state-of-the-art machinery and sustainable manufacturing processes.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════
+           ROW 2 — 2023 (card on LEFT)
+      ══════════════════════════════ -->
+      <div class="tl-row tl-row-left relative z-10 md:-mt-[6%]">
+
+        <!-- card -->
+        <div class="tl-card-side tl-card-left">
+          <div class="tl-card bg-white shadow-sm border rounded-lg p-[30px] text-left max-w-[365px] w-full">
+            <div class="tl-year desc-font">2023</div>
+            <h4 class="font-bold text-2xl title-font mb-1">Canada office</h4>
+            <p class="text-gray-600 desc-font font-medium text-base">
+              We opened our doors in Thailand to create a dedicated space for designers, architects, and industry leaders.
+            </p>
+          </div>
+        </div>
+
+        <!-- icon -->
+        <div class="tl-icon-col flex-shrink-0 w-[80px] flex justify-center">
+          <div class="border-2 border-dashed border-[#9B9C9D] rounded-full p-1 inline-flex">
+            <div class="w-[60px] h-[60px] flex items-center justify-center bg-[#9B9C9D] rounded-full">
+              <svg width="38" height="30" viewBox="0 0 38 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M35 3.75H31.25V1.25C31.25 0.918479 31.1183 0.600537 30.8839 0.366117C30.6495 0.131696 30.3315 0 30 0H7.5C7.16848 0 6.85054 0.131696 6.61612 0.366117C6.3817 0.600537 6.25 0.918479 6.25 1.25V3.75H2.5C1.83696 3.75 1.20107 4.01339 0.732233 4.48223C0.263392 4.95107 0 5.58696 0 6.25V8.75C0 10.4076 0.65848 11.9973 1.83058 13.1694C2.41095 13.7498 3.09994 14.2102 3.85823 14.5242C4.61651 14.8383 5.42924 15 6.25 15H6.82031C7.55664 17.3335 8.96057 19.4 10.8586 20.9443C12.7566 22.4885 15.0655 23.4428 17.5 23.6891V27.5H13.75C13.4185 27.5 13.1005 27.6317 12.8661 27.8661C12.6317 28.1005 12.5 28.4185 12.5 28.75C12.5 29.0815 12.6317 29.3995 12.8661 29.6339C13.1005 29.8683 13.4185 30 13.75 30H23.75C24.0815 30 24.3995 29.8683 24.6339 29.6339C24.8683 29.3995 25 29.0815 25 28.75C25 28.4185 24.8683 28.1005 24.6339 27.8661C24.3995 27.6317 24.0815 27.5 23.75 27.5H20V23.6844C24.9906 23.1797 29.1313 19.6781 30.6375 15H31.25C32.9076 15 34.4973 14.3415 35.6694 13.1694C36.8415 11.9973 37.5 10.4076 37.5 8.75V6.25C37.5 5.58696 37.2366 4.95107 36.7678 4.48223C36.2989 4.01339 35.663 3.75 35 3.75ZM6.25 12.5C5.25544 12.5 4.30161 12.1049 3.59835 11.4017C2.89509 10.6984 2.5 9.74456 2.5 8.75V6.25H6.25V11.25C6.25 11.6667 6.27031 12.0833 6.31094 12.5H6.25ZM28.75 11.1094C28.75 16.6594 24.2188 21.2094 18.75 21.25C16.0978 21.25 13.5543 20.1964 11.6789 18.3211C9.80357 16.4457 8.75 13.9022 8.75 11.25V2.5H28.75V11.1094ZM35 8.75C35 9.74456 34.6049 10.6984 33.9016 11.4017C33.1984 12.1049 32.2446 12.5 31.25 12.5H31.1719C31.2232 12.0382 31.2493 11.574 31.25 11.1094V6.25H35V8.75Z" fill="white"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- right spacer (desktop only) -->
+        <div class="tl-spacer hidden md:flex flex-1"></div>
+      </div>
+
+      <!-- ══════════════════════════════
+           ROW 3 — 2025 (card on RIGHT)
+      ══════════════════════════════ -->
+      <div class="tl-row tl-row-right relative z-10 md:-mt-[6%]">
+        <!-- left spacer (desktop only) -->
+        <div class="tl-spacer hidden md:flex flex-1"></div>
+
+        <!-- icon -->
+        <div class="tl-icon-col flex-shrink-0 w-[80px] flex justify-center">
+          <div class="border-2 border-dashed border-[#9B9C9D] rounded-full p-1 inline-flex">
+            <div class="w-[60px] h-[60px] flex items-center justify-center bg-[#9B9C9D] rounded-full">
+              <svg width="30" height="35" viewBox="0 0 30 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18.7491 33.7519C18.7491 34.0835 18.6174 34.4014 18.383 34.6358C18.1486 34.8703 17.8307 35.0019 17.4991 35.0019H12.4991C12.1676 35.0019 11.8497 34.8703 11.6153 34.6358C11.3808 34.4014 11.2491 34.0835 11.2491 33.7519C11.2491 33.4204 11.3808 33.1025 11.6153 32.8681C11.8497 32.6336 12.1676 32.5019 12.4991 32.5019H17.4991C17.8307 32.5019 18.1486 32.6336 18.383 32.8681C18.6174 33.1025 18.7491 33.4204 18.7491 33.7519ZM14.9991 16.2519C15.37 16.2519 15.7325 16.142 16.0408 15.936C16.3492 15.7299 16.5895 15.4371 16.7314 15.0945C16.8733 14.7519 16.9105 14.3749 16.8381 14.0112C16.7658 13.6474 16.5872 13.3133 16.325 13.0511C16.0627 12.7889 15.7287 12.6103 15.3649 12.538C15.0012 12.4656 14.6242 12.5028 14.2816 12.6447C13.939 12.7866 13.6462 13.0269 13.4401 13.3353C13.2341 13.6436 13.1241 14.0061 13.1241 14.3769C13.1241 14.8742 13.3217 15.3511 13.6733 15.7028C14.0249 16.0544 14.5019 16.2519 14.9991 16.2519ZM29.9398 23.1004L28.0085 31.7926C27.9169 32.2053 27.7221 32.5881 27.4423 32.9051C27.1625 33.2221 26.8069 33.463 26.4087 33.6052C26.0105 33.7474 25.5828 33.7863 25.1655 33.7182C24.7482 33.6502 24.3549 33.4774 24.0226 33.216L19.7663 30.0019H10.2351L5.97571 33.216C5.64334 33.4774 5.25012 33.6502 4.83282 33.7182C4.41552 33.7863 3.98777 33.7474 3.58958 33.6052C3.1914 33.463 2.83578 33.2221 2.55599 32.9051C2.27621 32.5881 2.08139 32.2053 1.98977 31.7926L0.0585187 23.1004C-0.023401 22.7274 -0.0192621 22.3406 0.070622 21.9694C0.160506 21.5982 0.333773 21.2524 0.577269 20.9582L5.03977 15.6051C5.18955 13.6378 5.64119 11.7053 6.37883 9.87539C8.39446 4.82226 12.0038 1.65195 13.4679 0.523824C13.9061 0.184267 14.4448 0 14.9991 0C15.5535 0 16.0922 0.184267 16.5304 0.523824C17.9898 1.65195 21.6038 4.82226 23.6195 9.87539C24.3571 11.7053 24.8087 13.6378 24.9585 15.6051L29.421 20.9582C29.6645 21.2524 29.8378 21.5982 29.9277 21.9694C30.0175 22.3406 30.0217 22.7274 29.9398 23.1004ZM10.5351 27.5019H19.4632C22.7632 21.6363 23.3804 16.0207 21.2976 10.8019C19.4601 6.1957 16.0132 3.2832 14.9991 2.50195C13.982 3.2832 10.5351 6.1957 8.69758 10.8019C6.61789 16.0207 7.23508 21.6363 10.5351 27.5019ZM8.19133 28.416C6.50904 25.3587 5.48821 22.354 5.12883 19.4019L2.49914 22.5582L4.43039 31.2519L4.45852 31.2316L8.19133 28.416ZM27.4991 22.5582L24.8695 19.4019C24.5132 22.3478 23.4945 25.3525 21.8132 28.416L25.5398 31.2285L25.5679 31.2488L27.4991 22.5582Z" fill="white"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- card -->
+        <div class="tl-card-side tl-card-right">
+          <div class="tl-card bg-white shadow-sm border rounded-lg p-[30px] text-left max-w-[365px] w-full">
+            <div class="tl-year desc-font">2025</div>
+            <h4 class="font-bold text-2xl title-font mb-1">Thailand</h4>
+            <p class="text-gray-600 desc-font font-medium text-base">
+              Recognized as a trusted partner by leading automotive and fashion brands worldwide.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!-- /TIMELINE -->
+
+  </div>
+</section>
+
+</body>
+</html>

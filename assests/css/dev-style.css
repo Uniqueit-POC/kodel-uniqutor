@@ -262,3 +262,102 @@ body {
     border-left: 0 !important;
   }
 }
+   /* ── MOBILE: single column, icon on left, card on right ── */
+    @media (max-width: 767px) {
+      .tl-wrap::before {
+        content: '';
+        position: absolute;
+        left: 34px;
+        top: 30px;
+        bottom: 30px;
+        border-left: 2px dashed #d1d5db;
+        z-index: 0;
+      }
+      .tl-row {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: flex-start !important;
+        margin-top: 0 !important;
+        margin-bottom: 24px !important;
+      }
+      .tl-spacer {
+        display: none !important;
+      }
+      .tl-card-side {
+        display: flex !important;
+        justify-content: flex-start !important;
+        padding-left: 14px !important;
+        padding-right: 0 !important;
+        flex: 1 !important;
+      }
+      .tl-card {
+        max-width: 100% !important;
+        width: 100% !important;
+        padding: 16px 18px !important;
+      }
+      .tl-year {
+        font-size: 52px !important;
+      }
+      .tl-icon-col {
+        position: relative;
+        z-index: 1;
+        flex-shrink: 0;
+      }
+    }
+
+    /* ── DESKTOP: alternating left/right with overlap ── */
+    @media (min-width: 768px) {
+      .tl-line {
+        display: block !important;
+      }
+      .tl-row-right {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        width: 100%;
+        position: relative;
+      }
+      .tl-row-left {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: flex-start;
+        width: 100%;
+        position: relative;
+      }
+      .tl-card-right {
+        display: flex;
+        justify-content: flex-start;
+        padding-left: 24px;
+        flex: 1;
+      }
+      .tl-card-left {
+        display: flex;
+        justify-content: flex-end;
+        padding-right: 24px;
+        flex: 1;
+      }
+    }
+
+    /* gradient year text */
+    .tl-year {
+      font-size: 80px;
+      font-weight: 600;
+      line-height: 1;
+      margin-bottom: 10px;
+      background: linear-gradient(to bottom, #1A70B4, rgba(26,112,180,0));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+     @keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-250px * 8)); } /* Adjust based on card width + gap */
+  }
+
+  .animate-scroll {
+    animation: scroll 40s linear infinite;
+  }
+
+  .slider-container:hover .animate-scroll {
+    animation-play-state: paused;
+  }
